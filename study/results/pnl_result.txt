@@ -1,0 +1,35 @@
+﻿================================================================
+EXPLORATORY DOLLAR VIEW — 1 NQ contract, open to close
+================================================================
+  window                2026-05-24 .. 2026-07-27
+  signals traded        43   (skipped 18, no session)
+  long / short          14 / 29
+  win rate (net)        20/43 = 47%
+
+  GROSS total           $     -10,607
+  costs (0.75pt x 43)     $        -645
+  NET total             $     -11,252
+  net per trade         $        -262
+  std dev per trade     $       6,535
+
+  95% CI on NET total   $-93,023  to  $75,290
+  CI straddles zero?    YES
+
+  best day              2026-06-05  down  $  +20,680
+  worst day             2026-06-11  down  $  -14,315
+  top 3 days = 21% of all movement (by absolute size)
+
+================================================================
+HOW TO READ THIS
+================================================================
+  The total is $-11,252. The 95% interval runs from
+  $-93,023 to $75,290. That interval is roughly
+  $168,313 wide, which is 15x the total itself.
+
+  So the honest statement is not "this made or lost money." It is: over 43
+  trades this is indistinguishable from flipping a coin and paying costs. The
+  primary test already said as much; this is the same finding in dollars.
+
+  Do not size up, size down, or change the rule off this number. It is the
+  EXPLORATORY view, and section 8 says explicitly that tradeability is not
+  claimed by anything in this study.

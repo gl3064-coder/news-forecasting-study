@@ -1,0 +1,65 @@
+﻿labelled days:        61
+directional calls:    88  (no_call rows already excluded)
+
+downloading prices (2026-05-24 .. 2026-07-27)
+  PRIMARY (RTH cash session, Amendment 2)
+  NQ    ^NDX      47 sessions
+  CL    USO       47 sessions
+  TNX   ^TNX      47 sessions
+  CHECK (futures, includes overnight)
+  NQ    NQ=F      48 sessions
+  CL    CL=F      48 sessions
+  TNX   ^TNX      47 sessions
+
+==================================================================
+PRIMARY  (^NDX / USO / ^TNX, 09:30-16:00)
+==================================================================
+  scored instrument-days   62
+  dropped (no session)     26
+  distinct days            43
+  said up / said down      26 / 36
+
+  P(up | said up)          13/26 = 50%
+  P(up | said down)        19/36 = 53%
+
+  PRIMARY  conditional difference = -2.8pp
+           95% CI [-24.4pp, +19.5pp]   (10000 draws, 0 discarded)
+           CI includes zero -> no detectable directional information at this sample size
+
+  SECONDARY  raw hit rate = 30/62 = 48%
+             minus base rate = -3.2pp   95% CI [-22.2pp, +16.4pp]
+
+  EXPLORATORY (not a test — per-instrument breakdown)
+    inst     n  said up  said dn    hit   cond diff
+    NQ      43       14       29    49%       -5.4pp
+    CL       5        1        4    20%      -75.0pp
+    TNX     14       11        3    57%       -3.0pp
+
+==================================================================
+CHECK  (NQ=F / CL=F / ^TNX, includes overnight)
+==================================================================
+  scored instrument-days   62
+  dropped (no session)     26
+  distinct days            43
+  said up / said down      26 / 36
+
+  P(up | said up)          12/26 = 46%
+  P(up | said down)        20/36 = 56%
+
+  PRIMARY  conditional difference = -9.4pp
+           95% CI [-30.5pp, +11.7pp]   (10000 draws, 0 discarded)
+           CI includes zero -> no detectable directional information at this sample size
+
+  SECONDARY  raw hit rate = 28/62 = 45%
+             minus base rate = -6.5pp   95% CI [-25.4pp, +12.5pp]
+
+  EXPLORATORY (not a test — per-instrument breakdown)
+    inst     n  said up  said dn    hit   cond diff
+    NQ      43       14       29    42%      -19.5pp
+    CL       5        1        4    40%      -50.0pp
+    TNX     14       11        3    57%       -3.0pp
+
+==================================================================
+Per section 7: all of this is RETROSPECTIVE and underpowered by
+design. Re-run this identical script as the forward sample grows.
+Do not change the rule now that the number is visible.

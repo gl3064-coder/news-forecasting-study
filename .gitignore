@@ -1,0 +1,25 @@
+# Secrets — NEVER commit
+.env
+.env.*
+!.env.example
+credentials.json
+token.json*
+
+# Data artifacts stay out of git. The corpus is licensed publisher text and the
+# forecast dump is 27 MB of blobs. Their exact state at freeze time is recorded
+# in study/PRE_REGISTRATION.md as row counts plus a SHA-256 of the dump, which
+# is what makes the freeze verifiable without shipping the data.
+*.db
+*.db-journal
+*.db-wal
+forecasts_raw.jsonl
+
+# Hand-labelling worksheets embed verbatim newsletter text. Withheld.
+handlabel*
+v3_mornings/
+
+*.log
+__pycache__/
+*.pyc
+.venv/
+.pytest_cache/

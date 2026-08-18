@@ -1,0 +1,21 @@
+DROPLET-IP.nip.io {
+    # Static forecast scorecard, generated daily by
+    # /opt/forecast-labels/build_scorecard.py. Served directly by Caddy so the
+    # Pulse container and its code are untouched.
+    handle_path /scorecard* {
+        root * /opt/forecast-labels/public
+        file_server
+    }
+
+    handle {
+        reverse_proxy localhost:8000
+    }
+
+    encode gzip
+
+    header {
+        Strict-Transport-Security "max-age=31536000; includeSubDomains"
+        X-Content-Type-Options nosniff
+        Referrer-Policy strict-origin-when-cross-origin
+    }
+}

@@ -1,0 +1,116 @@
+days:    164  (2025-10-24 .. 2026-07-27)
+markets named: 140   resolving to 22 tickers
+
+downloading prices
+  BNO         193 sessions
+  EWJ         193 sessions
+  FXC         192 sessions
+  FXY         193 sessions
+  GLD         193 sessions
+  GOOGL       193 sessions
+  IBIT        193 sessions
+  ITA         193 sessions
+  NFLX        193 sessions
+  NVDA        193 sessions
+  QQQ         193 sessions
+  SPY         193 sessions
+  TLT         193 sessions
+  TSLA        193 sessions
+  UNG         193 sessions
+  USO         193 sessions
+  VGK         193 sessions
+  XLE         193 sessions
+  ^GSPC       193 sessions
+  ^NDX        193 sessions
+  ^TNX        193 sessions
+  ^TYX        193 sessions
+
+==================================================================
+PRIMARY [RETROSPECTIVE]  (stream A, same session 09:30-16:00)
+==================================================================
+  calls emitted            164
+  passed                   0
+  unscoreable (not in the frozen table)  24  = 15% of live calls
+  dropped (no session)     8
+  scored                   132
+
+  raw hit rate             78/132 = 59%
+  corrected skill          +7.6pp
+  95% CI                   [-0.7pp, +15.9pp]   (10000 draws, 0 discarded)
+  CI includes zero -> no detectable directional information at this sample size
+
+  SECONDARY (each call at its own stated horizon)
+    scored 127   unresolved 5
+    skill -0.4pp   95% CI [-9.0pp, +8.3pp]
+    (overlapping multi-day windows make these observations
+     non-independent — which is why they are not the primary)
+
+  EXPLORATORY (not a test)
+    conviction high  n=119  skill +9.8pp
+    conviction low   n=13   skill -12.4pp
+    stated horizon today  n=8
+    stated horizon week   n=112
+    stated horizon month  n=12
+    most-traded: BNO(72), USO(35), ^NDX(9), GLD(6), ^TNX(3), FXC(1), TSLA(1), ^GSPC(1)
+
+==================================================================
+SECONDARY B [RETROSPECTIVE]  (stream B, same session 09:30-16:00)
+==================================================================
+  calls emitted            163
+  passed                   2
+  unscoreable (not in the frozen table)  24  = 15% of live calls
+  dropped (no session)     5
+  scored                   132
+
+  raw hit rate             73/132 = 55%
+  corrected skill          +3.7pp
+  95% CI                   [-4.8pp, +12.0pp]   (10000 draws, 0 discarded)
+  CI includes zero -> no detectable directional information at this sample size
+
+  SECONDARY (each call at its own stated horizon)
+    scored 128   unresolved 4
+    skill +3.1pp   95% CI [-5.5pp, +11.7pp]
+    (overlapping multi-day windows make these observations
+     non-independent — which is why they are not the primary)
+
+  EXPLORATORY (not a test)
+    conviction high  n=121  skill +5.4pp
+    conviction low   n=11   skill -15.3pp
+    stated horizon today  n=9
+    stated horizon week   n=114
+    stated horizon month  n=9
+    most-traded: BNO(61), USO(50), ^NDX(8), GLD(3), ^TNX(3), FXC(1), ^GSPC(1), NFLX(1)
+
+==================================================================
+CHECK: PRIMARY under the pre-Amendment-1 exact-match rule  (stream A, same session 09:30-16:00)
+==================================================================
+  calls emitted            164
+  passed                   0
+  unscoreable (not in the frozen table)  104  = 63% of live calls
+  dropped (no session)     4
+  scored                   56
+
+  raw hit rate             29/56 = 52%
+  corrected skill          +0.7pp
+  95% CI                   [-12.3pp, +13.4pp]   (10000 draws, 0 discarded)
+  CI includes zero -> no detectable directional information at this sample size
+
+  SECONDARY (each call at its own stated horizon)
+    scored 55   unresolved 1
+    skill -9.2pp   95% CI [-21.9pp, +3.9pp]
+    (overlapping multi-day windows make these observations
+     non-independent — which is why they are not the primary)
+
+  EXPLORATORY (not a test)
+    conviction high  n=46   skill +1.0pp
+    conviction low   n=10   skill -0.4pp
+    stated horizon today  n=6
+    stated horizon week   n=46
+    stated horizon month  n=4
+    most-traded: BNO(23), USO(16), ^NDX(9), GLD(6), FXC(1), ^GSPC(1)
+
+==================================================================
+Per section 8: this run is RETROSPECTIVE. Leakage biases it upward,
+so a positive result here is suggestive only. Re-run this identical
+script as the forward sample grows. Do not change the rule now that
+the number is visible.
